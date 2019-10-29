@@ -1,0 +1,16 @@
+---
+- name:         "Copy sysctl files"
+  copy:
+   src:         "{{ item.src }}"
+   dest:        "{{ item.dest }}"
+  with_items:
+        - { src: "files/weekly_reboot.service", dest: "/etc/systemd/system/weekly_reboot.service" }
+        - { src: "files/weekly_reboot.timer", dest: "/etc/systemd/system/weekly_reboot.timer" }
+  notify:
+        - Reload Systemctl       
+
+- name: Start the Weekly reboot service
+  service:
+    name: weekly_reboot.timer
+    state: started
+    enabled: yes

@@ -1,0 +1,6 @@
+[Unit]
+Description=Timer for Weekly Reboot the system
+
+[Timer]
+OnCalendar=Sun *-*-* 00:10:00
+

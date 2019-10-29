@@ -1,0 +1,7 @@
+[Unit]
+Description=Weekly System Reboot
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/reboot
+

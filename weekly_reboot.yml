@@ -1,0 +1,9 @@
+---
+- name: Schedule a Weekly Reboot
+  gather_facts: no
+  become: true
+  hosts: all
+  connection: local
+
+  roles:
+    - roles/reboot
