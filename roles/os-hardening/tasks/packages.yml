@@ -1,0 +1,13 @@
+---
+
+- name: Upgrading all packages (CentOS)
+  yum:
+    name: '*'
+    state: latest
+
+- name: Install a few more packages
+  package:
+    name: "{{item}}"
+    state: installed
+  with_items:
+   - vim

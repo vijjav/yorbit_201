@@ -1,0 +1,9 @@
+---
+- import_tasks: login_defs.yml
+  tags: login_defs
+
+- import_tasks: packages.yml 
+  tags: packages
+
+- import_tasks: user.yml
+  tags: user

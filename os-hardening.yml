@@ -1,0 +1,9 @@
+---
+- name: Perform OS Hardening
+  gather_facts: no
+  become: true
+  hosts: all
+  connection: local
+
+  roles:
+    - roles/os-hardening
